@@ -1,0 +1,39 @@
+
+#login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+#login-form .login-form {
+    width: 350px;
+    background-color: transparent;
+    backdrop-filter: blur(2rem);
+    padding: 20px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  #login-form .ant-form-item{
+    width: 100%;
+    margin: 20px;
+  }
+  #login-form .login-form-forgot {
+    float: right;
+
+  }
+  #login-form .login-form-forgot{
+    color: #fff;
+  }
+  #login-form .login-form-regi{
+    color: #fff;
+  }
+  #login-form .login-form-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }

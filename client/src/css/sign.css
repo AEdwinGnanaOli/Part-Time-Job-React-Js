@@ -1,0 +1,19 @@
+.sign-form{
+    /* background-color: #fff; */
+    backdrop-filter: blur(4rem);
+    width: 450px;
+    
+}
+.form-sign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.form-sign h1{
+    text-align: center;
+}
+.form-heading{
+    display: flex;
+    justify-content: center;
+}

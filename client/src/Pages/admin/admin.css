@@ -1,0 +1,297 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+*{
+  font-family:"Roboto", sans-serif;
+}
+.admin-body{
+  background: #fff ! important;
+  height: 39rem;
+}
+.details-btns{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr ;
+    overflow: hidden;
+  
+    /* padding: 30px; */
+ 
+}
+.details-btns{
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  
+}
+@media only screen and (max-width: 600px) {
+  .details-btns{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr ;
+    overflow: hidden;
+    min-height: 50vh;
+    /* padding: 30px; */
+ 
+}
+}
+.details-btns .btn-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: #fff;
+    width: 12rem;
+    height: 12rem;
+    border-radius:6rem;
+    margin: 40px;
+    cursor: pointer;
+}
+.details-btns .btn-user .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    font-size:5rem;
+    font-weight:bolder;
+    color: hsl(143, 100%, 25%);
+}
+.details-btns .btn-user a{
+    text-decoration: none;
+    color: hsl(143, 100%, 25%);
+}
+.details-btns .btn-vendor .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    font-size:5rem;
+    /* color: hsl(143, 100%, 25%); */
+}
+.details-btns .btn-vendor a{
+    text-decoration: none;
+    color: hsl(143, 100%, 25%);
+}
+/* .details-btns .btn-vendor {
+    background:transparent;
+    border: none;
+    color: hsl(143, 100%, 25%);
+    width: 100px;
+} */
+/* .details-btns .btn-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    /* width: rem;
+    height: 10rem; 
+    border-radius:5rem;
+    
+} */
+/* img{
+    width: 50px;
+    background:transparent ;
+} */
+.admin-user-btns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    
+}
+.admin-user-btns button{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.admin-edit-btn .admin-edit-icon{ 
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* table End */
+  /* search Start*/
+  .admin-search{
+  background-color: #fff;
+  width:300px;
+  height: 50px;
+  overflow: hidden;
+  }
+  .search-bar{
+    background-color:#fff;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+.admin-search-hover {
+  padding-left:5px ;
+  border: 2px solid #8f8f8f;
+  outline: none;
+  width: 300px;
+}
+.admin-search:hover{
+  width: 300px;
+  
+}
+
+.admin-search-btn{
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+}
+
+.admin-search-icon:hover{
+  color: #8f8f8f;
+  background: #fff;
+}
+.admin-search-btn{
+  border: 2px solid #8f8f8f;
+  background-color: #8f8f8f;
+}
+.admin-search-icon{
+  font-size: 10px;
+  background:transparent;
+  font-weight: 300;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+} 
+/* search end */
+/* profile start */
+  .admin-profile {
+    background-color: white ;
+    width: 17rem;
+    height: 20rem;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease forwards;
+    z-index: 9999;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .admin .admin-data{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+  
+  }
+  /* .admin table {
+    th,td{
+      vertical-align: middle;
+    }
+  }
+  .admin tbody, td, tfoot, th, thead, tr{
+    border-style: none;
+  }
+  .admin table thead{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+   margin: 20px; 
+  }
+ .admin table {
+    background-color: red;
+  } 
+  .admin table thead th{
+   padding: 20px;
+  }
+  .admin table td{
+    padding: 20px;
+  }
+  */
+  .admin-profile ul{
+    list-style: none;
+    padding: 0;
+  }
+  .admin-profile-container {
+    position: absolute;
+    top:57px;
+    right: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:end;
+    align-items: start;
+  } 
+  .admin-profile .button-close {
+    position: absolute;
+    top:0;
+    right: 0;
+    color:black;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    
+  }
+  .admin-profile .button-update {
+    margin: 30px 0px 0px 0px;
+    cursor: pointer;
+    
+  }
+  .admin-profile .button-close:hover{
+    background-color: #b8b8b8 ;
+    border-top-right-radius:15px ;
+    border-bottom-left-radius: 15px;
+  }
+  .admin-data .profile-name{
+    /* background: lightblue; */
+    width: 17rem;
+    height: 5rem;
+    padding: 1px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+  }
+  .admin-data .profile-name .first-letter{
+    background-color: rgb(146, 142, 128);
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    bottom: -28px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    border: 2px solid #fff;
+  }
+  .admin-data .profile-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  /* profile end*/
+  .navbar-header {
+    background: transparent !important;
+    backdrop-filter: blur(30px) !important;
+  }
+  .nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

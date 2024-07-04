@@ -1,0 +1,28 @@
+
+.form-header{
+    border-radius: 1px;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+.signup-form{
+    background-color: #ddd !important;
+    padding: 20px;
+    min-width: 25rem;
+}
+  .signup-form .signup-f-d {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .product-from{
+    max-width: 20rem;
+    overflow-y: scroll;
+    min-height: 100vh;
+    z-index: 9999;
+  }
+ 
+  

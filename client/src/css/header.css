@@ -1,0 +1,76 @@
+.navbar-header{
+    background:transparent!important;
+}
+/* .navbar a{
+    color:white;
+    margin-right: 10px;
+} */
+.navbar{
+    border: 1px solid #fff;
+}
+.navbar .nav-contect-icon,.nav-cart-icon{
+    font-size: 20px;
+    /* padding-top: 4px; */
+}
+
+.navss{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+.signin-btn{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.login-btn{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.logo{
+    color:#fff;
+}
+.logo:hover{
+    color: #343a40;
+}
+.user-p-c{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+    font-size: 20px;
+    font-weight: 900;
+}
+.user-p-c .user-profile{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.user-p-c .user-profile:hover{
+    color: #343a40;
+    border-radius: 15px;
+}
+.user-p-c .user-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.user-p-c .user-cart:hover{
+    color: #343a40;
+    border-radius: 15px;
+}
+@media screen and (min-width: 0px) and (max-width: 798px) {
+    .user-p-c {
+        display: block;
+    }
+    .user-p-c .user-cart{
+        text-align: start;
+        display: inline-block;
+        margin-bottom: 10px;
+        /* display: ; */
+    }
+  }

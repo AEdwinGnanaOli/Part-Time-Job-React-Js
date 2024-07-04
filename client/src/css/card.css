@@ -1,0 +1,70 @@
+#card{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height:100vh;
+    gap: 10px;
+    margin: 10px;
+  }
+.ant-card-meta-description{
+    height: 50px;
+    overflow:hidden  !important;
+    line-break: anywhere;
+}
+
+  .fulldetails {
+    display: flex;
+    /* flex-wrap: wrap; */
+  
+  } 
+  .card-header{
+    height: 100% !important;
+    min-height: 100vh;
+  }
+  .address p{
+    width: 220px;
+    line-break: anywhere;
+  }
+  .vendor-fulldetails {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+  }
+  .fulldetails .card-body label{
+    width: 8rem;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .fulldetails .card-body p {
+    font-size: 1rem;
+    display: flex;
+    max-width: 40rem;
+    padding: 8px;
+    font-weight: 400;
+  }
+  .card:first-child {
+    background-color:#fff !important;
+  }
+  @media screen and (min-width: 0px) and (max-width: 798px) {
+    .fulldetails{
+       display: block;
+    }
+    .shop-img{
+      width: 100%;
+    }
+    
+    .vendor-fulldetails{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .address p{
+      width: none;
+      line-break: none !important;
+      }
+  }
+  
+  /* cart start */
+

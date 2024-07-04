@@ -1,0 +1,14 @@
+.navbar-header{
+    background:transparent!important;
+}
+.navbar a{
+    color:white;
+    margin-right: 10px;
+}
+.navbar{
+    border: 1px solid #fff;
+}
+.navbar .nav-contect-icon,.nav-cart-icon{
+    font-size: 20px;
+    padding-top: 4px;
+}

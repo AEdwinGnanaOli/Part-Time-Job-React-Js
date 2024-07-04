@@ -1,0 +1,21 @@
+#card{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+  }
+  
+
+.ant-card-meta-description{
+    overflow-x: visible !important;
+    line-break: anywhere;
+}
+.like{
+    font-size:20px ;
+}
+.like-header p{
+    margin-bottom: 0 !important;
+}
+.unlike{
+    font-size: 20px;
+}
