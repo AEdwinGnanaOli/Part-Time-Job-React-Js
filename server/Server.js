@@ -6,7 +6,7 @@ const cookieParser=require('cookie-parser')
 const app = express()
 const {MONGO_URL,PORT}=process.env
 app.use(cors({
-    origin: ['https://unrivaled-dieffenbachia-37ef96.netlify.app'],
+    origin: ['https://preeminent-kleicha-760af9.netlify.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }))
