@@ -35,13 +35,13 @@
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "npm-force-resolutions": "^0.0.10",
-    "vite": "^2.9.9",
+    "vite": "^5.3.3",
     "vite-plugin-rewrite-all": "^1.0.2"
   }
 }
