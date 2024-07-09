@@ -41,7 +41,7 @@ function ProductSignIn() {
         }
     }
     return (
-        <Dashboard title={'Product-Sign-Up'}>
+        <Dashboard title={'Product-Sign-Up'} className='' >
         <Container>
             <Row  >
                 <Col className="form-header">

@@ -374,24 +374,3 @@ margin: 0 0 10px;
   font-weight: 300;
   color: #fff;
 }
-@media screen and (min-width: 0px) and (max-width: 798px) {
-  .carts{
-    height: 500px;
-    width: 100% !important;
-  }
-  .fulldetails{
-     display: block;
-  }
-  .shop-img{
-    width: 100%;
-  }
-  
-  .vendor-fulldetails{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .address p{
-    width: none;
-    line-break: none !important;
-    }
-}

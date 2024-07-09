@@ -53,7 +53,6 @@ function Login() {
                       navigate("/vendorhome")
                   }
               } else {
-                
                   throw new Error()
               }
           }).catch(err => {

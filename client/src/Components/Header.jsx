@@ -65,7 +65,7 @@ function Header() {
               </>
             ) : (
               <>
-                <div className="user-p-c">
+                <div className="user-p-c" >
                   <UserOutlined className='user-profile' onClick={accountDetails}/>
                   <ShoppingCartOutlined className='user-cart' onClick={()=>navigate('/usercart')}/>
                 </div>

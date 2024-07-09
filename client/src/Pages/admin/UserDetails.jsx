@@ -53,7 +53,6 @@ function UserDetails() {
     }
 
   ]
-  console.log(colums)
   useEffect(() => {
     const newdata = userdata.filter(res => {
       return res.name.toLowerCase().includes(qurey.toLowerCase().trim())||res.email.toLowerCase().includes(qurey.toLowerCase().trim())||res.phone.toLowerCase().includes(qurey.toLowerCase().trim())||res.role.toLowerCase().includes(qurey.toLowerCase().trim())

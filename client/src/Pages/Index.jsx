@@ -3,6 +3,7 @@ import {Navbar,Container,Nav, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate }from 'react-router-dom'
 import Layout from '../Components/layout/Layout';
+import UserHome from './UserHome'
 // import Footer from './Footer';
 function Index() {
   const navigate=useNavigate();
@@ -27,6 +28,7 @@ function Index() {
       </Container>
     </div>
         {/* <!-- End Hero Section --> */}
+        
   </div>
   
   </Layout>

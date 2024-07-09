@@ -18,11 +18,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .product-from{
-    max-width: 20rem;
-    overflow-y: scroll;
-    min-height: 100vh;
-    z-index: 9999;
-  }
  
-  
+  .product-from{
+    z-index: 9999;
+    min-height: 100vh;
+    
+  }

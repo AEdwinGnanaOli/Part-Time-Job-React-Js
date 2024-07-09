@@ -30,25 +30,31 @@ function Home({ colors }) {
   const [userId, setuserId] = useState();
   const [submitSuccess, setsubmitSuccess] = useState(false);
   const [vendorProducts, setVendorProducts] = useState([]);
-  console.log(vendorProducts)
   sessionStorage.setItem("userid", userId);
   cookies.token = localStorage.getItem("utoken");
   useEffect(() => {
     const verifyCookies = async () => {
+      if (!cookies.token) {
+        navigate("/login");
+      }
       const { data } = await axios.post(
         "https://part-time-job-react-js.onrender.com",
         {},
         { withCredentials: true }
       );
-      console.log(data,"data")
+      console.log(data)
+      const { status } = data;
       setuserId(data.user._id);
-      console.log(vendorProducts)
       setVendorProducts(data.vendorProducts);
-
+      return status
+        ? toast(`hello`, {
+            position: "top-right",
+          })
+        : (removeCookie("token"), navigate("/login"));
     };
    
     verifyCookies();
-  }, []);
+  }, [cookies, navigate, removeCookie]);
  
   const handleUserUpdate = (id) => {
     navigate("/user/update", sessionStorage.setItem("uupdateid", id));

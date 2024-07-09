@@ -21,8 +21,6 @@ function SignIn() {
                     navigate('/login')
                 }
             }).catch((err) => {
-                console.log(err)
-                
                 setError("root", {
                     message: "User already exists",
                 }, null)
