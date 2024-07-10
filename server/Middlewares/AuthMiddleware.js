@@ -8,23 +8,13 @@ const likes=require('../Models/like')
 
 module.exports.userVerification=async(req,res)=>{
   const token=req.cookies.token
-  if(!token){
-      return res.json({ status: false })
-  }
   jwt.verify(token,'jwt_secret_key',async(err,data)=>{
-      if (err) {
-          return res.json({ status: false })
-         } else {
            const user = await UserModel.findById(data.id)
            const vendorProducts= await ProductModel.find({})
            if (user) {return res.json({ status: true,user,vendorProducts})}
            else {return res.json({ status: false })}
          }
-       })
-
-
-             
-        
+       )
 }
 
 module.exports.vendorVerification=(req,res)=>{
