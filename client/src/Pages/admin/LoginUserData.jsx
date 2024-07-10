@@ -1,10 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
 import { MdModeEdit, MdDelete } from "react-icons/md";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import DataTable from "react-data-table-component";
-import "datatables.net";
 import Dashboard from "./Dashboard";
 function LoginUserData() {
   const [data, setData] = useState([]);
