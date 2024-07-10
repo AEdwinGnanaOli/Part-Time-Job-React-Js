@@ -37,7 +37,7 @@ function Home({ colors }) {
       if (!cookies.token) {
         navigate("/login");
       }
-      const { data } = await axios.get(
+      const { data } = await axios.post(
         "https://part-time-job-react-js.onrender.com",
         {},
         { withCredentials: true }
