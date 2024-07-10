@@ -4,7 +4,6 @@ import { Table } from "react-bootstrap";
 import { MdModeEdit, MdDelete } from "react-icons/md";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import DataTable from "react-data-table-component";
-import $ from "jquery";
 import "datatables.net";
 import Dashboard from "./Dashboard";
 function LoginUserData() {
@@ -14,12 +13,7 @@ function LoginUserData() {
     axios.get("https://part-time-job-react-js.onrender.com/login/userdata").then((user) => {
       setData(user.data.userDatas);
     });
-    const datatable = $("#datatable").DataTable({
-      colums: [{ title: "Vendor name", data: data.name }],
-    });
-    return () => {
-      datatable.destroy();
-    };
+   
   }, [data]);
 
   useEffect(() => {
