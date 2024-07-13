@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate, useParams } from "react-router-dom";
-import {
-  Navbar,
-  Container,
-  Nav,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { GiShoppingCart } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import { IoMdContact } from "react-icons/io";
@@ -31,31 +26,19 @@ function Home({ colors }) {
   const [submitSuccess, setsubmitSuccess] = useState(false);
   const [vendorProducts, setVendorProducts] = useState([]);
   sessionStorage.setItem("userid", userId);
-  cookies.token = localStorage.getItem("utoken");
   useEffect(() => {
-    const verifyCookies = async () => {
-      if (!cookies.token) {
-        navigate("/login");
-      }
-      const { data } = await axios.post(
-        "https://part-time-job-react-js.onrender.com",
+    axios
+      .get("https://part-time-job-react-js.onrender.com",
         {},
         { withCredentials: true }
-      );
-      console.log(data)
-      const { status } = data;
-      setuserId(data.user._id);
-      setVendorProducts(data.vendorProducts);
-      return status
-        ? toast(`hello`, {
-            position: "top-right",
-          })
-        : (removeCookie("token"), navigate("/login"));
-    };
-   
-    verifyCookies();
-  }, [cookies, navigate, removeCookie]);
- 
+      )
+      .then((data) => {
+        setuserId(data.user._id);
+        setVendorProducts(data.vendorProducts);
+      });
+    console.log(data);
+  }, []);
+
   const handleUserUpdate = (id) => {
     navigate("/user/update", sessionStorage.setItem("uupdateid", id));
   };
@@ -71,14 +54,13 @@ function Home({ colors }) {
       });
   };
   return (
-    <Layout title={'Home'}>
-     
+    <Layout title={"Home"}>
       {/* Product Card Start  */}
       <section id="card">
         {vendorProducts.map((vendor) => (
-          <Card 
-           hoverable='red'
-           className="carts"
+          <Card
+            hoverable="red"
+            className="carts"
             style={{
               width: 300,
             }}
@@ -91,7 +73,6 @@ function Home({ colors }) {
               />
             }
             actions={[
-             
               <span
                 onClick={(e) =>
                   navigate(`/productfulldetail/${vendor._id}/${cookies.token}`)
@@ -101,10 +82,7 @@ function Home({ colors }) {
               </span>,
             ]}
           >
-            <Meta
-              title={vendor.shopname}
-              description={vendor.shopaddress}
-            />
+            <Meta title={vendor.shopname} description={vendor.shopaddress} />
           </Card>
         ))}
       </section>
