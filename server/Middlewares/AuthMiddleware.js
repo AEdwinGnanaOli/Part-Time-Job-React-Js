@@ -10,7 +10,7 @@ module.exports.userVerification=async(req,res)=>{
   
       const vendorProducts= await ProductModel.find({})
       console.log(vendorProducts)
-      if (user) {return res.json({ status: true,user,vendorProducts})}
+      if (vendorProducts) {return res.json({vendorProducts})}
       else{ return res.json({message:'not found'})}
       
 }

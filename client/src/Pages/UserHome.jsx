@@ -27,16 +27,10 @@ function Home({ colors }) {
   const [vendorProducts, setVendorProducts] = useState([]);
   sessionStorage.setItem("userid", userId);
   useEffect(() => {
-    axios
-      .get("https://part-time-job-react-js.onrender.com",
-        {},
-        { withCredentials: true }
-      )
-      .then((data) => {
-        setuserId(data.user._id);
-        setVendorProducts(data.vendorProducts);
-      });
-    console.log(data);
+    axios.get("https://part-time-job-react-js.onrender.com").then((data) => {
+      console.log(data);
+      setVendorProducts(data.data.vendorProducts);
+    });
   }, []);
 
   const handleUserUpdate = (id) => {
