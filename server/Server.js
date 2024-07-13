@@ -5,7 +5,6 @@ require('dotenv').config()
 const cookieParser=require('cookie-parser')
 const app = express()
 const {MONGO_URL,PORT}=process.env
-app.use(cors())
 app.use(cors({
     origin: ['https://beautiful-genie-4db327.netlify.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
