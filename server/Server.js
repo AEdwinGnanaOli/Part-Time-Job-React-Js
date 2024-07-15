@@ -3,8 +3,9 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const cookieParser=require('cookie-parser')
 const app = express()
+const {MONGO_URL,PORT}=process.env
 app.use(cors({
-    origin: ['https://beautiful-genie-4db327.netlify.app'],
+    origin: ['https://precious-bonbon-5a346f.netlify.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }))
