@@ -32,6 +32,7 @@ function Home({ colors }) {
   const [vendorProducts, setVendorProducts] = useState([]);
   sessionStorage.setItem("userid", userId);
   cookies.token = localStorage.getItem("utoken");
+  console.log(cookies.token )
   useEffect(() => {
     const verifyCookies = async () => {
       if (!cookies.token) {
