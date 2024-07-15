@@ -10,7 +10,7 @@ module.exports.userVerification=(req,res)=>{
     const token=req.cookies.token
     console.log(token)
     if(!token){
-        return res.json({ status: false,message:'token' , token})
+        return res.json({ status: false,message:'token' ,token:token})
     }
     jwt.verify(token,'jwt_secret_key',async(err,data)=>{
         if (err) {
