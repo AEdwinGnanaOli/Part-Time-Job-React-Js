@@ -13,7 +13,7 @@ module.exports.userVerification=(req,res)=>{
     }
     jwt.verify(token,'jwt_secret_key',async(err,data)=>{
         if (err) {
-            return res.json({ status: false })
+            return res.json({ status: false ,message:'err'})
            } else {
              const user = await UserModel.findById(data.id)
              const vendorProducts= await ProductModel.find({})
