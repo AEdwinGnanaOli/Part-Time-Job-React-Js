@@ -36,15 +36,17 @@ function Login() {
                       navigate('/admin/layout')
                   }
                   if (user.data.user.role === 'user') {
+                    console.log(user.data)
                       console.log(user.data.user)
                       localStorage.setItem('utoken', user.data.token);
                       navigate('/userhome')
+                      localStorage.setItem('auth',JSON.stringify(user.data))
                       setAuth({
                         ...auth,
                         user:user.data.user,
                         token:user.data.token
                       })
-                      localStorage.setItem('auth',JSON.stringify(user.data))
+                      
                   }
                   console.log(user.data.user.role)
                   if (user.data.user.role === 'Vendor') {
