@@ -16,7 +16,7 @@ function ForgotPassword() {
             await new Promise((resolve) => {
                 setTimeout(resolve, 2000)
             })
-            axios.post('http://localhost:3000/forgotpassword', userData).then((user) => {
+            axios.post('https://part-time-job-react-js.onrender.com/forgotpassword', userData).then((user) => {
                 if (user.data.message !== 'User no existed') {
                     throw new Error()
                 }else{

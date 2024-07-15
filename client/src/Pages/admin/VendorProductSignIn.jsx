@@ -28,7 +28,7 @@ function ProductSignIn() {
             formData.append('price', userData.price)
             formData.append('role', userData.role)
             formData.append('file', userData.file);
-            axios.post(`http://localhost:3000/productregister/${vendorId}`, formData).then((user) => {
+            axios.post(`https://part-time-job-react-js.onrender.com/productregister/${vendorId}`, formData).then((user) => {
                 if (user.data === "User already exists") {
                     throw new Error()
                 } else {

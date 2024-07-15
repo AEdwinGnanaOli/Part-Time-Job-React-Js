@@ -21,7 +21,7 @@ function ResetPassword() {
             if (userData.password !== userData.conformpassword) {
                 throw new Error()
             } else {
-                axios.post(`http://localhost:3000/resetpassword/${id}/${token}`, userData).then((user) => {
+                axios.post(`https://part-time-job-react-js.onrender.com/resetpassword/${id}/${token}`, userData).then((user) => {
                     if (user.data.message === 'The password reset Successfully') {
                         navigate('/login')
                     } 

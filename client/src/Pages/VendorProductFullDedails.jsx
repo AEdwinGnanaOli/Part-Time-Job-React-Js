@@ -10,19 +10,19 @@ function VendorProductFullDedails() {
   const [vendorProducts, setVendorProducts] = useState([])
   const userId = sessionStorage.getItem('userid')
    useEffect(() => {
-    axios.get(`http://localhost:3000/productfulldetails/${id}/${token}`).then(product => {
+    axios.get(`https://part-time-job-react-js.onrender.com/productfulldetails/${id}/${token}`).then(product => {
       console.log(product)
       setVendorProducts([product.data.vendorProductDetails])
     })
   }, [])
 
   const handleCard = (vendorId) => {
-    axios.post(`http://localhost:3000/usercart/${userId}/${vendorId}/${id}`).then((card) => {
+    axios.post(`https://part-time-job-react-js.onrender.com/usercart/${userId}/${vendorId}/${id}`).then((card) => {
     navigate('/userhome')
     }).catch(err => {
       console.log(err)
     })
-    axios.post(`http://localhost:3000/userdetails/${userId}/${vendorId}/${id}`).then((result) => {
+    axios.post(`https://part-time-job-react-js.onrender.com/userdetails/${userId}/${vendorId}/${id}`).then((result) => {
     }).catch((err) => {
       console.log(err)
     });
@@ -37,7 +37,7 @@ function VendorProductFullDedails() {
             <Card style={{}} className='card-header'>
               <div className="fulldetails">
                 <div className="shop-img">
-                  <Card.Img variant="top" src={`http://localhost:3000/images/${vendor.image}`}/>
+                  <Card.Img variant="top" src={`https://part-time-job-react-js.onrender.com/images/${vendor.image}`}/>
                 </div>
                 <div className="card-body">
                   <Card.Body >

@@ -15,7 +15,7 @@ function VendorSignInProduct() {
         try {
             setsubmitSuccess(true)
             await new Promise((resolve) => { setTimeout(resolve, 2000) })
-            axios.post('http://localhost:3000/vendorregister', userData).then((user) => {
+            axios.post('https://part-time-job-react-js.onrender.com/vendorregister', userData).then((user) => {
                 setId(user.data.vendor._id)
             if (user.data.message === "User already exists") {
                 throw new Error()

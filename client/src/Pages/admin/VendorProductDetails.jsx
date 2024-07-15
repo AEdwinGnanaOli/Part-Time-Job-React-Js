@@ -11,14 +11,14 @@ function VendorProductDetails() {
   const id = sessionStorage.getItem('adminId')
   const navigate = useNavigate()
   useEffect(() => {
-    axios.get('http://localhost:3000/admin/vendorproductdetails').then((result) => {
+    axios.get('https://part-time-job-react-js.onrender.com/admin/vendorproductdetails').then((result) => {
       setData(result.data.vendorDatas)
     }).catch((err) => {
       console.log(err)
     });
   }, [])
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/admin/vendorproductdelete/${id}`).then((user) => {
+    axios.delete(`https://part-time-job-react-js.onrender.com/admin/vendorproductdelete/${id}`).then((user) => {
       window.location.reload()
     }).catch(err => { console.log(err) })
   }
@@ -28,7 +28,7 @@ function VendorProductDetails() {
   const colums = [
     {
       name: "Image",
-      selector: row => (<img width={150} height={100} src={`http://localhost:3000/images/${row.image}`} alt='chh' className='vendor-p-img' />)
+      selector: row => (<img width={150} height={100} src={`https://part-time-job-react-js.onrender.com/images/${row.image}`} alt='chh' className='vendor-p-img' />)
     },
     {
       name: "Shop Name",

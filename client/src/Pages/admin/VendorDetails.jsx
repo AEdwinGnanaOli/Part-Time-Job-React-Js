@@ -11,14 +11,14 @@ function VendorDetails() {
   const [vendordata, setData] = useState([]);
   const navigate = useNavigate()
   useEffect(() => {
-    axios.get('http://localhost:3000/admin/vendordetails').then((result) => {
+    axios.get('https://part-time-job-react-js.onrender.com/admin/vendordetails').then((result) => {
       setData(result.data.vendorDatas)
     }).catch((err) => {
       console.log(err)
     });
   }, [])
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/vendor/delete/${id}`).then((user) => {
+    axios.delete(`https://part-time-job-react-js.onrender.com/vendor/delete/${id}`).then((user) => {
       window.location.reload()
     }).catch(err => { console.log(err) })
   }

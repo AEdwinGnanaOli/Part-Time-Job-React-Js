@@ -27,7 +27,7 @@ function AdminHome({ colors }) {
             if (!cookies.token) {
                 navigate('/login');
             };
-            const { data } = await axios.post('http://localhost:3000/adminhome', {},
+            const { data } = await axios.post('https://part-time-job-react-js.onrender.com/adminhome', {},
                 { withCredentials: true });
             const { status } = data
             setId (data.user._id)

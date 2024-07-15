@@ -14,7 +14,7 @@ function AdminProductUpdate() {
     const [userData, setUserData] = useState({  shopname: "", email: '', shopmobilenumber: '', shopaddress: "", starttime: "",endtime:"", price: "", work: "", file: "", role: 'VendorProduct' })
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get('http://localhost:3000/getproductdetails/' + id).then(user => {
+        axios.get('https://part-time-job-react-js.onrender.com/getproductdetails/' + id).then(user => {
             setUserData({
                 shopname: user.data.pdls.shopname,
                 email: user.data.pdls.email,
@@ -46,7 +46,7 @@ function AdminProductUpdate() {
             formData.append('work',userData.work)
             formData.append('role', userData.role)
             formData.append('file', userData.file);
-            axios.put('http://localhost:3000/productupdate/'+id, formData).then((user) => {
+            axios.put('https://part-time-job-react-js.onrender.com/productupdate/'+id, formData).then((user) => {
                 if (user.data.message === "Product update Successfully") {
                     navigate("/adminhome")
                 } else {

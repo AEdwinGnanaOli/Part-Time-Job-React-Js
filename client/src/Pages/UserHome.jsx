@@ -38,7 +38,7 @@ function Home({ colors }) {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:3000",
+        "https://part-time-job-react-js.onrender.com",
         {},
         { withCredentials: true }
       );
@@ -61,7 +61,7 @@ function Home({ colors }) {
   };
   const handleUserDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/user/delete/${id}`)
+      .delete(`https://part-time-job-react-js.onrender.com/user/delete/${id}`)
       .then((user) => {
         window.location.reload();
         Logout();
@@ -85,7 +85,7 @@ function Home({ colors }) {
             cover={
               <img
                 alt="example"
-                src={`http://localhost:3000/images/${vendor.image}`}
+                src={`https://part-time-job-react-js.onrender.com/images/${vendor.image}`}
                 style={{ height: "300px" }}
               />
             }

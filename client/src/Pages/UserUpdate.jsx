@@ -13,7 +13,7 @@ function UserUpdate() {
   const [userData, setUserData] = useState({ name: "", email: "", phone: '' })
   const navigate = useNavigate()
   useEffect(() => {
-    axios.get('http://localhost:3000/getuser/vendor/details/' + id).then(user => {
+    axios.get('https://part-time-job-react-js.onrender.com/getuser/vendor/details/' + id).then(user => {
       setUserData(
         {
           name: user.data.udls.name,
@@ -28,7 +28,7 @@ function UserUpdate() {
     try {
       setsubmitSuccess(true)
       await new Promise((resolve) => { setTimeout(resolve, 2000) })
-      axios.put('http://localhost:3000/vendor/update/' + id, { ...userData }).then((user) => {
+      axios.put('https://part-time-job-react-js.onrender.com/vendor/update/' + id, { ...userData }).then((user) => {
         if (user.data.message === 'User already exists') {
           throw new Error()
         } else {
