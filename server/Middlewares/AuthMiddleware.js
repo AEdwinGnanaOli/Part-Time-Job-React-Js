@@ -8,6 +8,7 @@ const likes=require('../Models/like')
 
 module.exports.userVerification=(req,res)=>{
     const token=req.cookies.token
+    console.log(token)
     if(!token){
         return res.json({ status: false })
     }
@@ -16,9 +17,10 @@ module.exports.userVerification=(req,res)=>{
             return res.json({ status: false ,message:'err'})
            } else {
              const user = await UserModel.findById(data.id)
+             console.log(user)
              const vendorProducts= await ProductModel.find({})
              if (user) {return res.json({ status: true,user,vendorProducts})}
-             else {return res.json({ status: false })}
+             else {return res.json({ status: false ,message:'user err'})}
            }
          })
 }
