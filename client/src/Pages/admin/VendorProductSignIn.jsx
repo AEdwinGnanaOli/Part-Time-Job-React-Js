@@ -28,11 +28,11 @@ function ProductSignIn() {
             formData.append('price', userData.price)
             formData.append('role', userData.role)
             formData.append('file', userData.file);
-            axios.post(`https://part-time-job-react-js.onrender.com/productregister/${vendorId}`, formData).then((user) => {
+            axios.post(`http://localhost:3000/productregister/${vendorId}`, formData).then((user) => {
                 if (user.data === "User already exists") {
                     throw new Error()
                 } else {
-                    navigate("/admin/layout")
+                    navigate("/adminhome")
                 }
             }).catch((err) => { console.log(err) })
 
@@ -41,11 +41,11 @@ function ProductSignIn() {
         }
     }
     return (
-        <Dashboard title={'Product-Sign-Up'} className='' >
+        <Dashboard title={'Product-Sign-Up'}>
         <Container>
             <Row  >
                 <Col className="form-header">
-                    <Form className="signup-form product-from" style={{ width: '25rem' }} onSubmit={handleSubmit(onSubmit)} >
+                    <Form className="signup-form" style={{ width: '25rem' }} onSubmit={handleSubmit(onSubmit)} >
                         <h1 className="text-center">ProductRegister</h1>
                         <Col>
                             <Form.Group className="mb-3" >

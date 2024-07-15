@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate, useParams } from "react-router-dom";
-import { Navbar, Container, Nav, Button } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  Nav,
+  Button,
+} from "react-bootstrap";
 import { GiShoppingCart } from "react-icons/gi";
 import { CiSearch } from "react-icons/ci";
 import { IoMdContact } from "react-icons/io";
@@ -26,19 +31,37 @@ function Home({ colors }) {
   const [submitSuccess, setsubmitSuccess] = useState(false);
   const [vendorProducts, setVendorProducts] = useState([]);
   sessionStorage.setItem("userid", userId);
+  cookies.token = localStorage.getItem("utoken");
   useEffect(() => {
-    axios.get("https://part-time-job-react-js.onrender.com").then((data) => {
-      console.log(data);
-      setVendorProducts(data.data.vendorProducts);
-    });
-  }, []);
-
+    const verifyCookies = async () => {
+      if (!cookies.token) {
+        navigate("/login");
+      }
+      const { data } = await axios.post(
+        "http://localhost:3000",
+        {},
+        { withCredentials: true }
+      );
+      console.log(data)
+      const { status } = data;
+      setuserId(data.user._id);
+      setVendorProducts(data.vendorProducts);
+      return status
+        ? toast(`hello`, {
+            position: "top-right",
+          })
+        : (removeCookie("token"), navigate("/login"));
+    };
+   
+    verifyCookies();
+  }, [cookies, navigate, removeCookie]);
+ 
   const handleUserUpdate = (id) => {
     navigate("/user/update", sessionStorage.setItem("uupdateid", id));
   };
   const handleUserDelete = (id) => {
     axios
-      .delete(`https://part-time-job-react-js.onrender.com/user/delete/${id}`)
+      .delete(`http://localhost:3000/user/delete/${id}`)
       .then((user) => {
         window.location.reload();
         Logout();
@@ -48,13 +71,13 @@ function Home({ colors }) {
       });
   };
   return (
-    <Layout title={"Home"}>
+    <Layout title={'Home'}>
+     
       {/* Product Card Start  */}
       <section id="card">
         {vendorProducts.map((vendor) => (
-          <Card
-            hoverable="red"
-            className="carts"
+          <Card 
+           hoverable='red'
             style={{
               width: 300,
             }}
@@ -62,11 +85,12 @@ function Home({ colors }) {
             cover={
               <img
                 alt="example"
-                src={`https://part-time-job-react-js.onrender.com/images/${vendor.image}`}
+                src={`http://localhost:3000/images/${vendor.image}`}
                 style={{ height: "300px" }}
               />
             }
             actions={[
+             
               <span
                 onClick={(e) =>
                   navigate(`/productfulldetail/${vendor._id}/${cookies.token}`)
@@ -76,7 +100,10 @@ function Home({ colors }) {
               </span>,
             ]}
           >
-            <Meta title={vendor.shopname} description={vendor.shopaddress} />
+            <Meta
+              title={vendor.shopname}
+              description={vendor.shopaddress}
+            />
           </Card>
         ))}
       </section>

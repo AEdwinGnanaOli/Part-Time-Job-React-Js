@@ -8,13 +8,13 @@ import Dashboard from './Dashboard';
 function LoginVendorData() {
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get('https://part-time-job-react-js.onrender.com/loginvendordata').then(user => {
+        axios.get('http://localhost:3000/loginvendordata').then(user => {
             setData(user.data.vendorDatas)
         })
     }, [])
     console.log(data)
     const handleDelete = (id) => {
-        axios.delete(`https://part-time-job-react-js.onrender.com/vendor/delete/${id}`).then((user) => {
+        axios.delete(`http://localhost:3000/vendor/delete/${id}`).then((user) => {
             window.location.reload()
         }).catch(err => { console.log(err) })
     }

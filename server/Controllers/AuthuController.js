@@ -2,6 +2,7 @@ const UserModel = require('../Models/UserMoldel')
 const Vendormodel = require('../Models/VendorModel')
 const ProductModel = require('../Models/ProductModel')
 const { createSceretToken } = require('../Util/SecretToken');
+const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer')
 const jwt = require('jsonwebtoken')
 const multer = require('multer')
@@ -66,13 +67,14 @@ module.exports.Login = async (req, res, next) => {
         if (!user) {
             return res.json({ message: 'User Not Found' })
         }
-        const auth = await password === user.password
+        const auth = await bcrypt.compare(password, user.password)
         if (!auth) {
             return res.json({ message: 'Incorrect password or email' })
         }
         const token = createSceretToken(user._id)
         res.cookie('token', token, {
             withCredentials: true,
+            httpOnly: false,
         })
         res.status(201).json({ message: 'Login Successfully', Status: "Success", success: true, user, token })
         next()
@@ -129,13 +131,13 @@ module.exports.Reset = async (req, res, next) => {
             if (err) {
                 return res.json({ message: "invalid token" })
             } else {
-                
-                    UserModel.findByIdAndUpdate({ _id: id }, { password: password }).then(user => {
+                bcrypt.hash(password, 12).then(hash => {
+                    UserModel.findByIdAndUpdate({ _id: id }, { password: hash }).then(user => {
                         return res.json({ message: "The password reset Successfully", user })
                     }).catch(err => {
                         return res.json({ message: "user no exited" })
                     })
-                
+                })
             }
         })
     } catch (err) {

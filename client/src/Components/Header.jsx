@@ -29,7 +29,7 @@ function Header() {
 
   return (
     <div>
-    <Navbar expand="lg" className="bg-body-tertiary navbar-header">
+    <Navbar expand="md" className="bg-body-tertiary navbar-header">
       <Container fluid>
         <Navbar.Brand onClick={(e) => navigate("/")} className="logo">
           PTJP
@@ -65,7 +65,7 @@ function Header() {
               </>
             ) : (
               <>
-                <div className="user-p-c" >
+                <div className="user-p-c">
                   <UserOutlined className='user-profile' onClick={accountDetails}/>
                   <ShoppingCartOutlined className='user-cart' onClick={()=>navigate('/usercart')}/>
                 </div>

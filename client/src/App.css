@@ -9,13 +9,26 @@ body {
       rgba(0, 0, 0, 0.3) 0,
       rgba(0, 0, 0, 0.3) 50%,
       rgba(0, 0, 0, 0.3) 100%
-    ),
-    url("https://img.freepik.com/free-vector/gradient-career-cushioning-concept_23-2150842077.jpg?w=740&t=st=1713928005~exp=1713928605~hmac=b0fa68c2fd3b83723fe1d5761177b60cfd293055d1cea72617b0e00e5873a63a");
+    ), url('https://img.freepik.com/free-vector/gradient-career-cushioning-concept_23-2150842077.jpg?w=740&t=st=1713928005~exp=1713928605~hmac=b0fa68c2fd3b83723fe1d5761177b60cfd293055d1cea72617b0e00e5873a63a');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  
+  min-height: 35rem;
 }
+/* #root{
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.4) 0,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.4) 100%
+    ), url('bg-img.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+/* all forms start */
 .login-row {
   display: flex;
   justify-content: center;
@@ -77,54 +90,20 @@ body {
   color: #ffffff;
   margin-top: 30px;
   margin-bottom: 30px;
-  display: flex !important;
-  flex-wrap: wrap;
 }
 .hero p {
-  color: #ffffff;
-  font-size: 20px;
+  color: #fff;
   margin-bottom: 30px;
-  display: flex !important;
-  flex-wrap: wrap;
-  width: 700px;
-}
-
-@media screen and (min-device-width: 100px) and (max-device-width: 798px) {
-  #home {
-    display: flex !important;
-    justify-content: center;
-    flex-wrap: wrap !important;
-    font-size: 3rem;
-  }
-
-  .hero h1 {
-    font-weight: 900;
-    color: #ffffff;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    font-size: 2rem;
-  }
-  .text button{
-    font-size: 1rem;
-  }
-  .text {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .hero p {
-    font-size: 1.5rem;
-  }
 }
 /* error start */
 .regi-inp-err:focus {
   color: black;
   background: #b80b0b;
   outline: 0;
-  border: 2px solid #fc887c !important;
-  box-shadow: 0 0 0 0.1rem #fc887c !important;
+  border: 2px solid #fc887c ! important;
+  box-shadow: 0 0 0 0.1rem #fc887c ! important;
 }
-.error-color {
+.error-color{
   color: #f5dfdd;
 }
 /* .regi-inp-err {
@@ -291,19 +270,20 @@ margin: 0 0 10px;
   height: 100%;
 }
 
-.edit-btn {
+.edit-btn{
   display: flex;
   justify-content: space-between;
   align-items: center;
+    
 }
-.edit-btn .edit-icon {
-  /* padding-top: 2px ; */
-  padding-right: 10px;
-  font-size: 27px;
-  /* font-weight: 800; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.edit-btn .edit-icon{ 
+    /* padding-top: 2px ; */
+    padding-right: 10px;
+    font-size: 27px;
+    /* font-weight: 800; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* vendor-product table end */
 
@@ -337,40 +317,40 @@ margin: 0 0 10px;
   font-size: 20px;
   padding-top: 4px;
 }
-.search {
-  background-color: #fff;
-  width: 80px;
-  height: 40px;
-  overflow: hidden;
-  border-radius: 10px;
+.search{
+background-color: #fff;
+width:80px;
+height: 40px;
+overflow: hidden;
+border-radius: 10px;
 }
 
 .search-hover {
-  padding-left: 5px;
+  padding-left:5px ;
   border: none;
   outline: none;
 }
-.search:hover {
+.search:hover{
   width: 300px;
   border-radius: 20px;
 }
 .search-hover:hover {
   width: 250px;
 }
-.search-btn {
+.search-btn{
   background-color: #ffffff;
   border: none;
   outline: none;
 }
-.search-btn {
+.search-btn{
   border: 1px solid #8f8f8f;
   padding-right: 10px;
-  padding-left: 10px;
+  padding-left:10px ;
   background-color: #8f8f8f;
 }
-.search-icon {
+.search-icon{
   font-size: 20px;
-  background: transparent;
+  background:transparent;
   font-weight: 300;
   color: #fff;
 }

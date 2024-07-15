@@ -49,10 +49,6 @@
     background-color:#fff !important;
   }
   @media screen and (min-width: 0px) and (max-width: 798px) {
-    .carts{
-      height: 500px;
-      width: 100% !important;
-    }
     .fulldetails{
        display: block;
     }

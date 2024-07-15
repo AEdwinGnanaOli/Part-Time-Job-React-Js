@@ -29,7 +29,7 @@ function Login() {
           await new Promise((resolve) => {
               setTimeout(resolve, 2000)
           })
-          axios.post('https://part-time-job-react-js.onrender.com/login', { ...values},{withCredentials:true}).then(async (user) => {
+          axios.post('http://localhost:3000/login', { ...values}).then(async (user) => {
               if (user.data.message === 'Login Successfully') {
                   if (user.data.user.role === 'admin') {
                       localStorage.setItem('atoken', user.data.token);
@@ -53,6 +53,7 @@ function Login() {
                       navigate("/vendorhome")
                   }
               } else {
+                
                   throw new Error()
               }
           }).catch(err => {

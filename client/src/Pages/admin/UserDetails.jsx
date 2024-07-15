@@ -11,14 +11,14 @@ function UserDetails() {
   const [qurey,setQurey]=useState('')
   const navigate = useNavigate()
   useEffect(() => {
-    axios.get('https://part-time-job-react-js.onrender.com/admin/userdetails').then((result) => {
+    axios.get('http://localhost:3000/admin/userdetails').then((result) => {
       setData(result.data.userDetails)
     }).catch((err) => {
       console.log(err)
     });
   }, [])
   const handleDelete = (id) => {
-    axios.delete(`https://part-time-job-react-js.onrender.com/user/delete/${id}`).then((user) => {
+    axios.delete(`http://localhost:3000/user/delete/${id}`).then((user) => {
       window.location.reload()
     }).catch(err => { console.log(err) })
   }
@@ -53,6 +53,7 @@ function UserDetails() {
     }
 
   ]
+  console.log(colums)
   useEffect(() => {
     const newdata = userdata.filter(res => {
       return res.name.toLowerCase().includes(qurey.toLowerCase().trim())||res.email.toLowerCase().includes(qurey.toLowerCase().trim())||res.phone.toLowerCase().includes(qurey.toLowerCase().trim())||res.role.toLowerCase().includes(qurey.toLowerCase().trim())

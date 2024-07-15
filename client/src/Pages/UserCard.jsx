@@ -12,7 +12,7 @@ function UserCard() {
   useEffect(() => {
     axios
       .get(
-        `https://part-time-job-react-js.onrender.com/usercartdisplay/${auth.user._id}/${auth.token}`
+        `http://localhost:3000/usercartdisplay/${auth.user._id}/${auth.token}`
       )
       .then((product) => {
         setCart(product.data.userCart);
@@ -23,7 +23,7 @@ function UserCard() {
   }, [userCart]);
   const handleDelete = (id, vendorId) => {
     axios
-      .delete(`https://part-time-job-react-js.onrender.com/usercartdelete/${id}/${vendorId}`)
+      .delete(`http://localhost:3000/usercartdelete/${id}/${vendorId}`)
       .then((user) => {
         // window.location.reload();
       })
@@ -46,7 +46,7 @@ function UserCard() {
               cover={
                 <img
                   alt="example"
-                  src={`https://part-time-job-react-js.onrender.com/images/${vendor.image}`}
+                  src={`http://localhost:3000/images/${vendor.image}`}
                   style={{ height: "300px" }}
                 />
               }

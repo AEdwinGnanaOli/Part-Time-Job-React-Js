@@ -24,7 +24,7 @@ router.post('/userRegister', SignUp);
 router.post('/vendorregister', VendorSignUp);
 router.post("/productregister/:vendorId", upload.single('file'), ProductRegister);
 router.post('/login', Login);
-router.get('/', userVerification);
+router.post('/', userVerification);
 router.post('/vendordetails', vendorVerification);
 router.post('/forgotpassword', Forgot);
 router.post('/resetpassword/:id/:token', Reset);
