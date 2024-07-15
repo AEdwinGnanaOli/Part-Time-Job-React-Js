@@ -67,7 +67,7 @@ module.exports.Login = async (req, res, next) => {
         if (!user) {
             return res.json({ message: 'User Not Found' })
         }
-        const auth = await bcrypt.compare(password, user.password)
+        const auth = await password === user.password
         if (!auth) {
             return res.json({ message: 'Incorrect password or email' })
         }
@@ -131,13 +131,13 @@ module.exports.Reset = async (req, res, next) => {
             if (err) {
                 return res.json({ message: "invalid token" })
             } else {
-                bcrypt.hash(password, 12).then(hash => {
-                    UserModel.findByIdAndUpdate({ _id: id }, { password: hash }).then(user => {
+                
+                    UserModel.findByIdAndUpdate({ _id: id }, {password: password  }).then(user => {
                         return res.json({ message: "The password reset Successfully", user })
                     }).catch(err => {
                         return res.json({ message: "user no exited" })
                     })
-                })
+                
             }
         })
     } catch (err) {
